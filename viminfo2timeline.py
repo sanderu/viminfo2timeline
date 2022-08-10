@@ -140,7 +140,7 @@ def parse_cli_registers(viminfo):
             a, state, linenumber, chars, epochtime, filename = entry.split(',', 5)
             message = '.viminfo - 1000 - Vim cursor position on line: {}, char position: {} in file: {}'.format(linenumber, chars, filename)
             if int(state) >= 48:
-                message = '.viminfo - 9000 - Indication of file closing: {} with cursor at line: {} column: {}'.format(filename, linenumber, chars)
+                message = '.viminfo - 9000 - Indication of file write/closing: {} with cursor at line: {} column: {}'.format(filename, linenumber, chars)
             if linenumber == '1' and chars == '0':
                 message = '.viminfo - 0000 - Indication of file opening: {}'.format(filename)
             print_hits(epochtime, message)
